@@ -8,7 +8,7 @@ The neural network structure is based on "Masked Autoregressive Flow", and the s
 trainingset:Voxceleb 
 testset: SITW, CNCeleb
 
-Following this [link](https://) to download the dataset
+Following this[link](https:) to download the dataset
 ```
 
 ## Run DNF
