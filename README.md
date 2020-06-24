@@ -17,6 +17,10 @@ python train.py
 ```
 The evaluation and scoring will be performed automatically during the training process.
 
-
+## Other instructions
+```bash
+score.py is a python implementations of the standard kaldi consine scoring, you can also use kaldi to do the plda scoring
+tsne.py can be used to draw the distribution of latent space 
+```
 
 
