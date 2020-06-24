@@ -9,7 +9,7 @@ trainingset:Voxceleb
 testset: SITW, CNCeleb
 ```
 Following this [link](https://pan.baidu.com/s/1NZXZhKbrJUk75FDD4_p6PQ) to download the dataset 
-Extraction code：8xwe
+(extraction code：8xwe)
 
 ## Run DNF
 ```bash
