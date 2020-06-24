@@ -14,11 +14,9 @@ Following this link to download the dataset
 ## Run DNF
 ```bash
 python train.py
+The evaluation and scoring will be performed automatically during the training process
 ```
 
-## Evaluate
-```bash
-python eval.py
-```
+
 
 
