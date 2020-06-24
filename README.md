@@ -7,14 +7,15 @@ The neural network structure is based on "Masked Autoregressive Flow", and the s
 ```bash
 trainingset:Voxceleb 
 testset: SITW, CNCeleb
-https://
-Following this link to download the dataset
+
+Following this [link](https://) to download the dataset
 ```
 
 ## Run DNF
 ```bash
 python train.py
-The evaluation and scoring will be performed automatically during the training process
+
+The evaluation and scoring will be performed automatically during the training process.
 ```
 
 
