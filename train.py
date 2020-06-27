@@ -107,7 +107,7 @@ if __name__ == "__main__":
    # Training settings
    parser = argparse.ArgumentParser(description='PyTorch Flows')
    parser.add_argument('--batch-size', type=int,   default=300,   help='input batch size for training (default: 300)')
-   parser.add_argument('--epochs',     type=int,   default=280,  help='number of epochs to train (default: 1000)')
+   parser.add_argument('--epochs',     type=int,   default=1000,  help='number of epochs to train (default: 1000)')
    parser.add_argument('--lr',         type=float, default=0.003, help='learning rate (default: 0.003)')
    parser.add_argument('--num-blocks', type=int,   default=10,    help='number of invertible blocks (default: 10)')
    parser.add_argument('--seed',       type=int,   default=1,     help='random seed (default: 1)')
@@ -177,7 +177,7 @@ if __name__ == "__main__":
       print(time.asctime( time.localtime(time.time()) ))
       train(epoch)
       #save model to checkpoint
-      if epoch % 280 == 0:
+      if epoch % 5 == 0:
         print("saving model to ./chkpt/model_epoch%d.pt"%(epoch))
         torch.save(model.state_dict(), './chkpt/model_epoch{}.pt'.format(epoch))
         
