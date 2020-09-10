@@ -171,13 +171,26 @@ if __name__ == "__main__":
       os.mkdir('./z_Sitw');
    if not os.path.exists('./chkpt'):
       os.mkdir('./chkpt' );
+   
+   #initial
+   print('\nDrawing tsne of xvector ......')
+   tsne.main('./data/xvector/vox_4k.npz', -1)
+   #scoing
+   print('do scoring ......')
+   trails_path = './data/xvector/Sitw/core-core.lst'
+   eer = cosine_scoring_by_trails('./data/xvector/vox_4k.npz', './data/xvector/Sitw/enroll.npz', './data/xvector/Sitw/test.npz', trails_path)
+   print('>>>> epoch = {}  cosine eer% = {:.2f}%'.format(-1, eer*100))
+   file = open('result_eer','a')
+   file.write('epoch = {} cosine-eer% = {:.2f} \n'.format(-1, eer*100))
+   file.close()
+
 
    for epoch in range(args.epochs):
       print('\nEpoch: {}'.format(epoch))
       print(time.asctime( time.localtime(time.time()) ))
       train(epoch)
       #save model to checkpoint
-      if epoch % 5 == 0:
+      if epoch % 50 == 0:
         print("saving model to ./chkpt/model_epoch%d.pt"%(epoch))
         torch.save(model.state_dict(), './chkpt/model_epoch{}.pt'.format(epoch))
         
@@ -207,7 +220,6 @@ if __name__ == "__main__":
             
             #scoing
             print('do scoring ......')
-            trails_path = './data/xvector/Sitw/core-core.lst'
             eer = cosine_scoring_by_trails(path0, path1, path2, trails_path)
             print('>>>> epoch = {}  cosine eer% = {:.2f}%'.format(epoch, eer*100))
             
